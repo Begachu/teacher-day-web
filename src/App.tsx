@@ -1,9 +1,10 @@
 import React from "react";
+import Home from "./pages/Home";
 
 function App() {
   return (
     <div className="App">
-      <div className="bg-fuchsia-400">dd</div>
+      <Home />
     </div>
   );
 }
