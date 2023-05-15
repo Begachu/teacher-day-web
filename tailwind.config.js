@@ -8,6 +8,7 @@ export default {
         purple: "#BC89FD",
         green: "#09C1A5",
         yellow: "#ECC359",
+        white: "#FFFFFF",
         background: "#050736",
       },
     },

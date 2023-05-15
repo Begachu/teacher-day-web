@@ -12,7 +12,7 @@ function Memo({ content, name, color }: Props) {
   const letter = content.split("\n");
 
   return (
-    <div className={`${COLOR_SET[color]} p-6 rounded-md shadow-md`}>
+    <div className={`${COLOR_SET[color]} p-6 rounded-md shadow-md flex-1`}>
       <h2 className="text-3xl">{letter[0]}</h2>
       {letter.map((item, index) => {
         if (index !== 0)
