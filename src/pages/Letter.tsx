@@ -1,45 +1,72 @@
 import React from "react";
 import Memo from "../components/Memo";
+import LetterData from "../constants/letter.json";
+const letters = LetterData.data;
 
 function Letter() {
   return (
     <div className="w-full flex flex-col items-center">
       {/* HEADER */}
-      <header className="w-full h-96 bg-background flex flex-col justify-end p-10">
-        <h1 className="text-white flex flex-col text-6xl">
-          <span>손병찬 교수님</span>
-          <span>정말 감사합니다!</span>
-        </h1>
+      <header className="w-full relative h-96 flex bg-background/50 justify-between items-end p-14 overflow-hidden">
+        <img
+          src="단체사진.jpg"
+          className="blur-sm absolute -z-10 w-full scale-125 -top-80"
+        />
+        <div>
+          <h1 className="text-white flex flex-col text-6xl ml-4">
+            <span>손병찬 교수님</span>
+            <span>정말 감사합니다!</span>
+          </h1>
 
-        <h2 className="text-white flex flex-col text-2xl font-thin mt-4">
-          대전 8기 8반 학생들이 보내는 감사 편지
-        </h2>
+          <h2 className="text-white flex flex-col text-2xl font-thin mt-4 ml-4">
+            대전 8기 8반 학생들이 보내는 감사 편지
+          </h2>
+        </div>
+        <img src="단체사진.jpg" className="h-full" />
       </header>
 
       {/* MAIN */}
-      <main className="flex flex-wrap gap-5 justify-center w-full max-w-6xl py-10">
+      <main className="flex flex-wrap gap-5 justify-center items-baseline w-full max-w-6xl py-10">
         <section className="flex-1 min-w-[300px] flex flex-col gap-5 justify-center max-w-2xl">
-          <Memo content={"asdfsd\nasdfasdf"} name={"asdf"} color={0} />
-          <Memo content={"asdfsd\nasdfasdf"} name={"asdf"} color={1} />
-          <Memo content={"asdfsd\nasdfasdf"} name={"asdf"} color={3} />
-          <Memo content={"asdfsd\nasdfasdf"} name={"asdf"} color={2} />
+          {letters
+            .filter((item, index) => index % 3 === 0)
+            .map(({ content, name }, index) => (
+              <Memo
+                key={index}
+                content={content}
+                name={name}
+                color={index % 4}
+              />
+            ))}
         </section>
         <section className="flex-1 min-w-[300px] flex flex-col gap-5 justify-center max-w-3xl">
-          <Memo content={"asdfsd\nasdfasdf"} name={"asdf"} color={1} />
-          <Memo content={"asdfsd\nasdfasdf"} name={"asdf"} color={2} />
-          <Memo content={"asdfsd\nasdfasdf"} name={"asdf"} color={3} />
-          <Memo content={"asdfsd\nasdfasdf"} name={"asdf"} color={0} />
+          {letters
+            .filter((item, index) => index % 3 === 1)
+            .map(({ content, name }, index) => (
+              <Memo
+                key={index}
+                content={content}
+                name={name}
+                color={Math.abs(100 - index + 1) % 4}
+              />
+            ))}
         </section>
         <section className="flex-1 min-w-[300px] flex flex-col gap-5 justify-center max-w-3xl">
-          <Memo content={"asdfsd\nasdfasdf"} name={"asdf"} color={2} />
-          <Memo content={"asdfsd\nasdfasdf"} name={"asdf"} color={1} />
-          <Memo content={"asdfsd\nasdfasdf"} name={"asdf"} color={3} />
-          <Memo content={"asdfsd\nasdfasdf"} name={"asdf"} color={0} />
+          {letters
+            .filter((item, index) => index % 3 === 2)
+            .map(({ content, name }, index) => (
+              <Memo
+                key={index}
+                content={content}
+                name={name}
+                color={(index + 2) % 4}
+              />
+            ))}
         </section>
       </main>
 
       {/* FOOTER */}
-      <footer></footer>
+      <footer className="text-gray-600 m-20">Made by 서예지 · 한유경</footer>
     </div>
   );
 }
