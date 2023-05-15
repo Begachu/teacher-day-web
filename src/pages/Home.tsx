@@ -1,15 +1,17 @@
 import "./home.css";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
+  const navigator = useNavigate();
   return (
-    <>
+    <div className="container">
       <div className="wrapper">
         <div className="typing-demo">
           8기 8반 학생들로부터 편지가 도착했습니다. 비행기를 클릭해 보세요.
         </div>
       </div>
       <div className="frame">
-        <div className="plane-container">
+        <div className="plane-container" onClick={() => navigator("/letter")}>
           <svg
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"
@@ -41,7 +43,7 @@ function Home() {
         <div className="cloud x4"></div>
         <div className="cloud x5"></div>
       </div>
-    </>
+    </div>
   );
 }
 

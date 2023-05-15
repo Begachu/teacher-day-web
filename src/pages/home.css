@@ -1,5 +1,4 @@
-html,
-body {
+.container {
   background: linear-gradient(
     180deg,
     #76c6ff 0%,
@@ -69,6 +68,7 @@ svg {
   width: 200px;
   margin: 0px auto;
   z-index: 3;
+  cursor: pointer;
 }
 /*Paper Plane: Image*/
 .plane {

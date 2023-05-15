@@ -7,8 +7,11 @@ function Letter() {
     <div className="w-full flex flex-col items-center">
       {/* HEADER */}
       <header className="w-full relative h-96 flex bg-background/50 justify-between items-end p-14 overflow-hidden">
-        <img src="단체사진.jpg" className="blur-sm absolute -z-10 w-full scale-125 -top-80" />
-        <div>
+        <img
+          src="/assets/단체사진.jpg"
+          className="blur-sm absolute w-full scale-125 -top-80 opacity-50"
+        />
+        <div className="relative z-10">
           <h1 className="text-white flex flex-col text-6xl ml-4">
             <span>손병찬 교수님</span>
             <span>정말 감사합니다!</span>
@@ -18,7 +21,7 @@ function Letter() {
             대전 8기 8반 학생들이 보내는 감사 편지
           </h2>
         </div>
-        <img src="단체사진.jpg" className="h-full" />
+        <img src="/assets/단체사진.jpg" className="h-full relative z-10" />
       </header>
 
       {/* MAIN */}
