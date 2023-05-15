@@ -4,10 +4,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        pink: "#FF8E8E",
-        purple: "#BC89FD",
-        green: "#09C1A5",
-        yellow: "#ECC359",
+        pink: "#FFCFE0",
+        purple: "#C8E1FF",
+        green: "#B8F5BF",
+        yellow: "#FFEAB5",
         white: "#FFFFFF",
         background: "#050736",
       },
