@@ -28,7 +28,7 @@ function Memo({ content, name, color }: Props) {
         <div className="rounded-full w-10 h-10 overflow-hidden">
           <img
             className="h-auto aspect-square object-cover"
-            src={`${name}.svg`}
+            src={`/assets/${name}.svg`}
             alt={`${name} 사진`}
           />
         </div>
